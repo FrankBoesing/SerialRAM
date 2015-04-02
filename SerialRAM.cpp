@@ -29,6 +29,14 @@
 #define CSRELEASE() digitalWriteFast(RAM_CS, HIGH)
 #define SPICONFIG SPISettings(20000000, MSBFIRST, SPI_MODE0)
 
+
+void ram_init(void)
+{
+   CSCONFIG();
+   CSRELEASE();
+   ram_writeRDMR(RAM_SEQUENTIALMODE);
+}
+
 //Read Mode Register
 int ram_readRDMR(void)
 {

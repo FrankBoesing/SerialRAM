@@ -44,6 +44,8 @@
 #define RAM_PAGEMODE        0x80
 #define RAM_SEQUENTIALMODE  0x40
 
+void ram_init(void);
+
 int ram_readRDMR(void);
 void ram_writeRDMR(uint8_t mode);
 
